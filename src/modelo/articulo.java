@@ -12,7 +12,47 @@ import java.util.ArrayList;
  * @author Dell
  */
 public class articulo {
-    int id_articulo;
-    String nombre_articulo;
-    ArrayList<reclamo> articulo_reclamos;
+    private int id_articulo;
+    private String nombre_articulo;
+    private String descripcion_articulo;
+    private ArrayList<reclamo> articulo_reclamos;
+
+    public articulo(String nombre_articulo, String descripcion_articulo) {
+        this.nombre_articulo = nombre_articulo;
+        this.descripcion_articulo = descripcion_articulo;
+    }
+
+    public int getId_articulo() {
+        return id_articulo;
+    }
+
+    public void setId_articulo(int id_articulo) {
+        this.id_articulo = id_articulo;
+    }
+
+    public String getNombre_articulo() {
+        return nombre_articulo;
+    }
+
+    public void setNombre_articulo(String nombre_articulo) {
+        this.nombre_articulo = nombre_articulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public ArrayList<reclamo> getArticulo_reclamos() {
+        return articulo_reclamos;
+    }
+
+    public void setArticulo_reclamos(ArrayList<reclamo> articulo_reclamos) {
+        this.articulo_reclamos = articulo_reclamos;
+    }
+    
+    
 }

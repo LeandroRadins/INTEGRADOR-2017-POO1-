@@ -16,7 +16,7 @@ public class tarea {
     public tarea(String nombre, String descripcion, ArrayList<articulo> tarea_articulos) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.tarea_articulos = new ArrayList();
+        this.tarea_articulos = new ArrayList<>();
     }
     
     public int getId_tarea() {

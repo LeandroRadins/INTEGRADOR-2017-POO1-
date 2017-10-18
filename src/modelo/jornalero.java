@@ -1,6 +1,7 @@
 package modelo;
 
-public class jornalero extends tecnico{
+public class jornalero extends tecnico {
+
     private double jornal;
 
     public double getJornal() {
@@ -10,6 +11,6 @@ public class jornalero extends tecnico{
     public void setJornal(double jornal) {
         this.jornal = jornal;
     }
-    
+            
     
 }

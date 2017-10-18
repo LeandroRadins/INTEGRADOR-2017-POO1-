@@ -37,22 +37,20 @@ public class articulo {
     public void setNombre_articulo(String nombre_articulo) {
         this.nombre_articulo = nombre_articulo;
     }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
     public ArrayList<reclamo> getArticulo_reclamos() {
         return articulo_reclamos;
     }
 
+      public String getDescripcion_articulo() {
+        return descripcion_articulo;
+    }
+
+    public void setDescripcion_articulo(String descripcion_articulo) {
+        this.descripcion_articulo = descripcion_articulo;
+    }
+    
     public void setArticulo_reclamos(ArrayList<reclamo> articulo_reclamos) {
         this.articulo_reclamos = articulo_reclamos;
     }
-    
     
 }

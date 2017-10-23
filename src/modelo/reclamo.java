@@ -13,12 +13,13 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+
 @Entity
 @Table(name = "Reclamo")
 public class reclamo implements Serializable {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_reclamo;
     private String descripcion_reclamo;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -27,7 +28,7 @@ public class reclamo implements Serializable {
     private Date fecha_estimada;
     @ManyToMany(mappedBy = "reclamos")
     @OrderBy("id_articulo")
-    private Set <articulo> reclamo_articulos;
+    private Set<articulo> reclamo_articulos;
 
     public reclamo() {
     }
@@ -38,7 +39,6 @@ public class reclamo implements Serializable {
         this.reclamo_articulos = new HashSet();
     }
 
-    
     public int getId_reclamo() {
         return id_reclamo;
     }
@@ -71,11 +71,11 @@ public class reclamo implements Serializable {
         this.fecha_estimada = fecha_estimada;
     }
 
-    public Set <articulo> getReclamo_articulos() {
+    public Set<articulo> getReclamo_articulos() {
         return reclamo_articulos;
     }
 
-    public void setReclamo_articulos(Set <articulo> reclamo_articulos) {
+    public void setReclamo_articulos(Set<articulo> reclamo_articulos) {
         this.reclamo_articulos = reclamo_articulos;
     }
 

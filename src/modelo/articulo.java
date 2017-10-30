@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class articulo implements Serializable {
 
     @Id
-    @SequenceGenerator(name = "sec_arti",initialValue = 1,allocationSize = 1)
+    @SequenceGenerator(name = "sec_arti", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "sec_arti", strategy = GenerationType.SEQUENCE)
     private int id_articulo;
     private String nombre_articulo;
@@ -27,8 +27,8 @@ public class articulo implements Serializable {
     @ManyToOne
     private tecnico tecnico;
     @ManyToMany(mappedBy = "articulos")
-    @OrderBy ("id_reclamo")
-    private Set <reclamo> articulo_reclamos;
+    @OrderBy("id_reclamo")
+    private Set<reclamo> articulo_reclamos;
 
     public articulo() {
     }
@@ -53,6 +53,7 @@ public class articulo implements Serializable {
     public void setNombre_articulo(String nombre_articulo) {
         this.nombre_articulo = nombre_articulo;
     }
+
     public String getDescripcion_articulo() {
         return descripcion_articulo;
     }
@@ -61,12 +62,25 @@ public class articulo implements Serializable {
         this.descripcion_articulo = descripcion_articulo;
     }
 
-    public Set <reclamo> getArticulo_reclamos() {
+    public Set<reclamo> getArticulo_reclamos() {
         return articulo_reclamos;
     }
 
-    public void setArticulo_reclamos(Set <reclamo> articulo_reclamos) {
+    public void setArticulo_reclamos(Set<reclamo> articulo_reclamos) {
         this.articulo_reclamos = articulo_reclamos;
+    }
+
+    public void agregar_reclamos(reclamo r) {
+        this.articulo_reclamos.add(r);
+    }
+
+    public void eliminar_Reclamos(reclamo r) {
+        this.articulo_reclamos.remove(r);
+    }
+
+    @Override
+    public String toString() {
+        return "articulo{" + "id_articulo=" + id_articulo + ", nombre_articulo=" + nombre_articulo + ", descripcion_articulo=" + descripcion_articulo + ", tecnico=" + tecnico + ", articulo_reclamos=" + articulo_reclamos + '}';
     }
 
 }

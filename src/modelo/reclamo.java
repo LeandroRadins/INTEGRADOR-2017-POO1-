@@ -23,7 +23,7 @@ public class reclamo implements Serializable {
     private int id_reclamo;
     private String descripcion_reclamo;
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fecha_ingreso;
+    Date fecha_ingreso;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fecha_estimada;
     @ManyToMany(mappedBy = "reclamos")
@@ -33,9 +33,10 @@ public class reclamo implements Serializable {
     public reclamo() {
     }
 
-    public reclamo(String descripcion_reclamo, Date fecha_ingreso, Set<articulo> reclamo_articulos) {
+    public reclamo(String descripcion_reclamo, Date fecha_ingreso, Date fecha_estimada) {
         this.descripcion_reclamo = descripcion_reclamo;
         this.fecha_ingreso = fecha_ingreso;
+        this.fecha_estimada =fecha_estimada;
         this.reclamo_articulos = new HashSet();
     }
 
@@ -77,6 +78,14 @@ public class reclamo implements Serializable {
 
     public void setReclamo_articulos(Set<articulo> reclamo_articulos) {
         this.reclamo_articulos = reclamo_articulos;
+    }
+
+    public void agregar_Articulos(articulo a) {
+        this.reclamo_articulos.add(a);
+    }
+
+    public void eliminar_Articulos(articulo a) {
+        this.reclamo_articulos.remove(a);
     }
 
 }

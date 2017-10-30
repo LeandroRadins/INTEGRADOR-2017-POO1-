@@ -16,8 +16,8 @@ public class controlador {
         return this.persi_Cont.buscarTodosOrdenadosPor(tarea.class, tarea_.id_tarea);
     }
     
-    public tarea buscar_Tarea(){
-        
+    public tarea buscar_Tarea(int id){
+        return persi_Cont.buscar(tarea.class, id);
     }
 
 }

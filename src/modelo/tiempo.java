@@ -22,5 +22,5 @@ public class tiempo {
     public void setHoras_trabajadas(double horas_trabajadas) {
         this.horas_trabajadas = horas_trabajadas;
     }
-    
+
 }

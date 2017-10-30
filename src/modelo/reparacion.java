@@ -1,15 +1,32 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-public class reparacion {
+@Entity
+@Table(name = "Reparacion")
+public class reparacion implements Serializable {
 
+    @Id
     private int id_reparacion;
+    @Temporal(TemporalType.DATE)
     private Date fecha_finalizacion;
-    private ArrayList<reclamo> reparacion_reclamos;
+    @ManyToOne
+    private reclamo reparacion_reclamos;
+    @OneToMany(mappedBy = "reparacion")
+    @OrderBy("id_tarea")
     private ArrayList<tarea> reparacion_tareas;
-    private ArrayList<tecnico>reparacion_tecnicos;
+    @ManyToOne
+    private tecnico reparacion_tecnicos;
 
     public int getId_reparacion() {
         return id_reparacion;
@@ -27,14 +44,6 @@ public class reparacion {
         this.fecha_finalizacion = fecha_finalizacion;
     }
 
-    public ArrayList<reclamo> getReparacion_reclamos() {
-        return reparacion_reclamos;
-    }
-
-    public void setReparacion_reclamos(ArrayList<reclamo> reparacion_reclamos) {
-        this.reparacion_reclamos = reparacion_reclamos;
-    }
-
     public ArrayList<tarea> getReparacion_tareas() {
         return reparacion_tareas;
     }
@@ -43,13 +52,21 @@ public class reparacion {
         this.reparacion_tareas = reparacion_tareas;
     }
 
-    public ArrayList<tecnico> getReparacion_tecnicos() {
+    public reclamo getReparacion_reclamos() {
+        return reparacion_reclamos;
+    }
+
+    public void setReparacion_reclamos(reclamo reparacion_reclamos) {
+        this.reparacion_reclamos = reparacion_reclamos;
+    }
+
+    public tecnico getReparacion_tecnicos() {
         return reparacion_tecnicos;
     }
 
-    public void setReparacion_tecnicos(ArrayList<tecnico> reparacion_tecnicos) {
+    public void setReparacion_tecnicos(tecnico reparacion_tecnicos) {
         this.reparacion_tecnicos = reparacion_tecnicos;
     }
-    
-    
+
+
 }

@@ -7,6 +7,6 @@ import persistencia.*;
 import javax.persistence.*;
 
 public class sistema {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("integradorPU2017");
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("Integrador_2017PU");
         persistencia persi = new persistencia(emf);
 }

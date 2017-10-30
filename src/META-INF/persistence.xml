@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="integradorPU2017" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="Integrador_2017PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>modelo.articulo</class>
     <class>modelo.jornalero</class>
@@ -10,7 +10,7 @@
     <class>modelo.tarea</class>
     <class>modelo.tecnico</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Integrador 2017"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/INTEGRADOR POO1 (2017)"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value="Leandro97"/>

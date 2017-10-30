@@ -9,6 +9,10 @@ public class jornalero extends tecnico {
 
     private double jornal;
 
+    public jornalero() {
+        super();
+    }
+
     public double getJornal() {
         return jornal;
     }

@@ -9,6 +9,10 @@ public class mensual extends tecnico {
 
     private double sueldo;
 
+    public mensual() {
+        super();
+    }
+
     public double getSueldo() {
         return sueldo;
     }
